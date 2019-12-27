@@ -2,18 +2,23 @@ name: CI
 
 on: [push]
  
+jobs:
   build:
 
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node-version: [13.x]
+
     steps:
     - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: yarn install
+      run: Installed
     - name: "Configure AWS Credentials" Action For GitHub Actions
       uses: aws-actions/configure-aws-credentials@v1.0.1
       with:
