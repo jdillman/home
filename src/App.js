@@ -1,25 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <StravaSummary
+        url={
+          "https://www.strava.com/athletes/15694523/activity-summary/28a495984c9dd510b11b3fcfa08f1eedda333e62/"
+        }
+      />
     </div>
+  );
+}
+
+function StravaSummary(props) {
+  const { url } = props;
+  return (
+    <iframe
+      title="Strava"
+      height="160"
+      width="300"
+      frameBorder="0"
+      allowtransparency="true"
+      scrolling="no"
+      src={url}
+    />
   );
 }
 
