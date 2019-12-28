@@ -1,31 +1,18 @@
 import React from "react";
+import { ThemeProvider } from "@material-ui/styles";
+import CssBaseline from "@material-ui/core/CssBaseline";
+
+import defaultTheme from "./themes/default";
+import Routes from "./components/Routes";
 
 function App() {
   return (
-    <div className="App">
-      <p>Testing autodeploy</p>
-      <StravaSummary
-        url={
-          "https://www.strava.com/athletes/15694523/activity-summary/28a495984c9dd510b11b3fcfa08f1eedda333e62/"
-        }
-      />
-    </div>
-  );
-}
-
-function StravaSummary(props) {
-  const { url } = props;
-  return (
-    <iframe
-      title="Strava"
-      height="160"
-      width="300"
-      frameBorder="0"
-      allowtransparency="true"
-      scrolling="no"
-      sandbox=""
-      src={url}
-    />
+    <ThemeProvider theme={defaultTheme}>
+      <CssBaseline />
+      <section className="main-app">
+        <Routes />
+      </section>
+    </ThemeProvider>
   );
 }
 
