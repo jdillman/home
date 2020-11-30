@@ -32,25 +32,19 @@ const styles = theme => ({
   },
 });
 
-class PrimarySearchAppBar extends React.Component {
-  componentDidMount() {}
-
-  render() {
-    const { classes } = this.props;
-
-    return (
-      <AppBar position="static">
-        <Toolbar component={Container} className={classes.toolbar} variant="dense">
-          <Typography className={classes.title} variant="h4" color="inherit" noWrap>
-            {process.env.TITLE}
-          </Typography>
-          <div className={classes.grow} />
-          <div className={classes.sectionDesktop} />
-          <div className={classes.sectionMobile} />
-        </Toolbar>
-      </AppBar>
-    );
-  }
-}
+const PrimarySearchAppBar = ({ classes }) => {
+  return (
+    <AppBar position="static">
+      <Toolbar component={Container} className={classes.toolbar} variant="dense">
+        <Typography className={classes.title} variant="h4" color="inherit" noWrap>
+          {process.env.TITLE}
+        </Typography>
+        <div className={classes.grow} />
+        <div className={classes.sectionDesktop} />
+        <div className={classes.sectionMobile} />
+      </Toolbar>
+    </AppBar>
+  );
+};
 
 export default withStyles(styles)(PrimarySearchAppBar);

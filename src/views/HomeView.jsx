@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Container from '@material-ui/core/Container';
+import Paper from '@material-ui/core/Paper';
 import View from './BaseView';
 
 class HomeView extends Component {
@@ -8,9 +8,11 @@ class HomeView extends Component {
   render() {
     return (
       <View>
-        <Container>
-          <p>Home</p>
-        </Container>
+        <Paper>
+          <a href="mailto:jdd619@gmail.com">jdd619@gmail.com</a>
+          <a href="https://www.linkedin.com/in/jdillman/">LinkedIn</a>
+          <a href="https://github.com/jdillman">GitHub</a>
+        </Paper>
       </View>
     );
   }
